@@ -6,4 +6,5 @@ for (let i = 1; i < arr2.length; i++) {
     max2 = arr2[i];
   }
 }
+
 console.log('Maximum Negative element:', max2);
