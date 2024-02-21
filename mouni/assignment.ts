@@ -1,2 +1,1 @@
-console.log("Hello");
-console.log("TY");
+console.log('Hello Mouni');
