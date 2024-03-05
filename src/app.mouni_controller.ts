@@ -15,11 +15,11 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('/name')
-  getUrlByName(): string {
-    // this is a sample change
-    return this.appService.getUrlByName();
-  }
+  // @Get('/name')
+  // getUrlByName(): string {
+  //   // this is a sample change
+  //   return this.appService.getUrlByName();
+  // }
 
   @Post('/max')
   getMaxElement(@Body() body): number {
