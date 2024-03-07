@@ -4,13 +4,16 @@ import { User } from './entities/user.entity';
 
 @Controller('/user/')
 export class UserController {
-
   constructor(private userService: UserService) {
   }
 
   @Post('add')
-  addUser(@Body() body) {
-    const user: User = new User(body['firstName'], body['lastName'], body['age']);
+  addUser(@Body() body: any) {
+    const user: User = new User(
+      body['firstName'],
+      body['lastName'],
+      body['age'],
+    );
     this.userService.addUser(user);
   }
 
