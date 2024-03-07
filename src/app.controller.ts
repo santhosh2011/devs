@@ -1,9 +1,11 @@
 import { Controller, Get, Query } from '@nestjs/common';
 import { AppService } from './app.service';
-import { getUserByName } from './user.service';
+
+
 
 @Controller()
 export class AppController {
+
   constructor(private readonly appService: AppService) {
   }
 
@@ -38,10 +40,10 @@ export class AppController {
     const querylastName = query['lastname'];
 
 
-    if (queryName == null) {
+    if (queryfirstName == null) {
       return users;
     }
-    return getUserByName(users, queryName);
+    return users;
 
   }
 }

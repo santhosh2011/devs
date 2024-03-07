@@ -1,11 +1,22 @@
-export function getUserByName(users,name):any{
+import { User } from './entities/user.entity';
+import { Injectable } from '@nestjs/common';
 
-  for(let i=0;i<users.length;i++){
-    let user = users[i];
-    if (user.Name == name){
-      return user;
-    }
+@Injectable()
+export class UserService {
+
+  users: User[];
+
+  constructor() {
+    this.users = [];
   }
 
-  return "User not found";
+  addUser(user: User) {
+    this.users.push(user);
+    console.log(`Added user ${user.firstName}`);
+  }
+
+  getUsers(): User[] {
+    return this.users;
+  }
+
 }
