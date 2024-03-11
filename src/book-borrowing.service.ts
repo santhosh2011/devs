@@ -15,9 +15,9 @@ export class BookBorrowingService {
   borrowBook(studentId: number, bookId: number) {
 
     const student: Student = this.studentService.getStudent(studentId);
-    const issueRecord = new IssueRecord(1, student);
+    // const issueRecord = new IssueRecord(1, student);
 
-    this.bookRegister.records.push(issueRecord);
+    // this.bookRegister.records.push(issueRecord);
 
   }
 }
