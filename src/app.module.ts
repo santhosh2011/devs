@@ -8,11 +8,13 @@ import { StudentController } from './student.controller';
 import { NoopGraphInspector } from '@nestjs/core/inspector/noop-graph-inspector';
 import { BookController } from './book.controller';
 import { BookService } from './book.service';
+import { BookBorrowingController } from './book-borrowing.controller';
+import { BookBorrowingService } from './book-borrowing.service';
 
 @Module({
   imports: [],
-  controllers: [AppController, UserController, StudentController, BookController],
-  providers: [AppService, UserService, StudentService, BookService],
+  controllers: [AppController, UserController, StudentController, BookController,BookBorrowingController],
+  providers: [AppService, UserService, StudentService, BookService,BookBorrowingService],
 })
 export class AppModule {
 }

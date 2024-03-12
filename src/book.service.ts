@@ -21,4 +21,14 @@ export class BookService {
   getBooks(): Book[] {
     return this.books;
   }
+
+  getBook(bookId: number): Book {
+    for (let i = 0; i < this.books.length; i++) {
+      if (this.books[i].id == bookId) {
+        return this.books[i];
+      }
+    }
+
+    return null;
+  }
 }

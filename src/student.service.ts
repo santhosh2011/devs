@@ -22,10 +22,13 @@ export class StudentService {
     return this.students;
   }
 
-
   getStudent(studentId: number): Student {
+    for (let i = 0; i < this.students.length; i++) {
+      if (this.students[i].id == studentId) {
+        return this.students[i];
+      }
+    }
 
-    //TODO: return the student Id from the students list
     return null;
   }
 }

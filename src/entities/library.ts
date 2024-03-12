@@ -55,6 +55,10 @@ export class Fine {
 
 export class BookRegister {
   records: IssueRecord[];
+
+  constructor() {
+    this.records = [];
+  }
 }
 
 
