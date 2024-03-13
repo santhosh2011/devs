@@ -57,7 +57,24 @@ export class BookBorrowingService {
     } else {
       return 'This student never took this book';
     }
+  }
 
+  getListRecords(studentId: number, bookId: number) {
+
+    /*
+    loop through all the records and check if the student id of the record matches the passed studentid
+    then we will append that record in to the defined array.
+     */
+    const result = [];
+    for (let i = 0; i < this.bookRegister.records.length; i++) {
+      if (
+        (studentId ==null || this.bookRegister.records[i].student.id == studentId)
+        &&(bookId==null|| this.bookRegister.records[i].book.id==bookId)
+      ) {
+        result.push(this.bookRegister.records[i]);
+      }
+    }
+    return result;
 
   }
 }

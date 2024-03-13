@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { BookBorrowingService } from './book-borrowing.service';
 
 @Controller('register')
@@ -22,4 +22,11 @@ export class BookBorrowingController {
     const bookId = body['book'];
     return this.bookBorrowingService.returnBook(studentId, bookId);
   }
+
+  @Get('list')
+  getList(@Query() query) {
+
+    return this.bookBorrowingService.getListRecords(query['student'], query['book']);
+  }
+
 }
